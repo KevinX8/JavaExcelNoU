@@ -29,7 +29,6 @@ public class Function {
             }
             amountOfSheets++;
             sheets[temp] = from;
-
             remove(temp2);
             return temp;
         }
@@ -46,13 +45,31 @@ public class Function {
              else{
                  return -1;
         }
-
-
-
     }
     public static String move(int from, int to, boolean before) {
-        return null;
-
+        String temp = sheetName(to);
+        String temp2 = sheetName(from);
+        if(sheetName(to) != null  && sheetName(from) != null && before && from != to ) {
+            for (int i = amountOfSheets - 1; i >= to; i--) {
+                sheets[i + 1] = sheets[i];
+            }
+            amountOfSheets++;
+            sheets[to] = temp2;
+            remove(from);
+            return temp;
+        }
+        else if(sheetName(to) != null && sheetName(from) != null && !before && from != to) {
+            for (int i = amountOfSheets - 1; i >= to + 1; i-- ) {
+                sheets[i + 1] = sheets[i];
+            }
+            amountOfSheets++;
+            sheets[to + 1] = temp2;
+            remove(from);
+            return temp;
+        }
+        else{
+            return null;
+        }
     }
     public static int moveToEnd(String from) {
         return -1;
