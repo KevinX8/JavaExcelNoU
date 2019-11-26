@@ -44,7 +44,7 @@ public class Main {
         if (input.startsWith("add") && !fargactive) {
             resultb = Function.add();
             if (resultb) {
-                System.out.printf("Added %s succesfully\n", "Sheet" + Function.lastadded);
+                System.out.printf("Added %s succesfully\n", "Sheet" + Function.lastAdded);
             } else {
                 System.out.println("Failed to add new sheet\n");
             }
@@ -146,7 +146,7 @@ public class Main {
                 System.out.printf("SheetPad is %d long\n", com.kevinx8.Function.length());
                 cmdactive = true;
             }
-            if (input.startsWith("index") && !fargactive) {
+            if (input.startsWith("index") && !sargactive) {
                 System.out.println("index is " + com.kevinx8.Function.index(farg));
                 cmdactive = true;
             }

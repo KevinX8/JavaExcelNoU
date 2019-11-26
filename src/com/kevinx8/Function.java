@@ -4,23 +4,50 @@ import java.util.Arrays;
 //remove static everywhere later
 public class Function {
     public static String[] sheets = new String[256];
-    public static int lastadded = 0, amountofsheets = 0;
+    public static int lastAdded = 0, amountOfSheets = 0;
 
     public static boolean add() {
-        if (amountofsheets <= 256) {
-            while (Function.index("Sheet" + (lastadded + 1)) != -1) {
-                lastadded++;
+        if (amountOfSheets <= 256) {
+            while (Function.index("Sheet" + (lastAdded + 1)) != -1) {
+                lastAdded++;
             }
-            sheets[amountofsheets] = "Sheet" + (lastadded + 1);
-            amountofsheets++;
-            lastadded++;
+            sheets[amountOfSheets] = "Sheet" + (lastAdded + 1);
+            amountOfSheets++;
+            lastAdded++;
             return true;
         } else {
             return false;
         }
     }
     public static int move(String from, String to,boolean before) {
-        return -1;
+        int temp = index(to);
+        int temp2 = index(from);
+        if(index(from) != -1  && index(to) != -1 && before && !from.equalsIgnoreCase(to) ) {
+
+            for (int i = amountOfSheets - 1; i >= temp; i--) {
+                sheets[i + 1] = sheets[i];
+            }
+            amountOfSheets++;
+            sheets[temp] = from;
+
+            remove(temp2);
+            return temp;
+        }
+        else if(index(from) != -1 && index(to) != -1 && !before && !from.equalsIgnoreCase(to)) {
+
+            for(int i = amountOfSheets - 1; i >= temp + 1; i-- ) {
+                sheets[i + 1] = sheets[i];
+            }
+                amountOfSheets++;
+                sheets[temp + 1] = from;
+                remove(temp2);
+                return temp + 1;
+            }
+             else{
+                 return -1;
+        }
+
+
 
     }
     public static String move(int from, int to, boolean before) {
@@ -50,7 +77,7 @@ public class Function {
     public static int index(String sheetName){
         int i;
         int index = -1;
-        for (i = 0; i < amountofsheets; i++) {
+        for (i = 0; i < amountOfSheets; i++) {
             if (sheets[i].equalsIgnoreCase(sheetName)) {
                 return i;
             }
@@ -59,8 +86,8 @@ public class Function {
     }
 
     public static void Display(){
-        //System.out.println(Arrays.asList(sheets).subList(0,amountofsheets));
-        for (int i = 0; i < amountofsheets; i++) {
+        //System.out.println(Arrays.asList(sheets).subList(0,amountOfSheets));
+        for (int i = 0; i < amountOfSheets; i++) {
             System.out.print(sheets[i] + " ");
         }
         System.out.println(); //remove this later
@@ -69,12 +96,12 @@ public class Function {
     public static String remove(int index){
         int i;
         String temp = sheetName(index);
-        if (amountofsheets > 1 && sheetName(index) !=null) {
-            for(i=index; i < amountofsheets; i++ ) {
+        if (amountOfSheets > 1 && sheetName(index) !=null) {
+            for(i=index; i < amountOfSheets; i++ ) {
                 sheets[i] = sheets[i+1];
             }
-            amountofsheets--;
-            sheets[i+1] = null;
+            sheets[amountOfSheets] = null;
+            amountOfSheets--;
             return temp;
         }else {
             return null;
@@ -83,19 +110,19 @@ public class Function {
     public static int remove(String sheetName) {
         int i;
         int temp = index(sheetName);
-        if (amountofsheets > 1 && index(sheetName) != -1) {
-            for(i=index(sheetName); i < amountofsheets; i++ ) {
+        if (amountOfSheets > 1 && index(sheetName) != -1) {
+            for(i=index(sheetName); i < amountOfSheets; i++ ) {
                 sheets[i] = sheets[i+1];
             }
-            amountofsheets--;
-            sheets[i+1] = null;
+            sheets[amountOfSheets] = null;
+            amountOfSheets--;
             return temp;
         }else {
             return -1;
         }
     }
     public static int length() {
-        return amountofsheets;
+        return amountOfSheets;
     }
     public static void Help(String arg) {
         boolean helpall = arg.equalsIgnoreCase("all");
