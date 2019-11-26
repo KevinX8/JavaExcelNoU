@@ -21,53 +21,44 @@ public class Function {
     }
     public static int move(String from, String to,boolean before) {
         int temp = index(to);
-        int temp2 = index(from);
-        if(index(from) != -1  && index(to) != -1 && before && !from.equalsIgnoreCase(to) ) {
-
-            for (int i = amountOfSheets - 1; i >= temp; i--) {
-                sheets[i + 1] = sheets[i];
+        int temp2 = 0, range = 0;
+        if(index(from) != -1  && index(to) != -1 && !from.equalsIgnoreCase(to) ) {
+            if (before) {
+                range = temp;
+            } else {
+                range = temp +1;
             }
-            amountOfSheets++;
-            sheets[temp] = from;
+                for (int i = amountOfSheets - 1; i >= range; i--) {
+                    sheets[i + 1] = sheets[i];
+                }
+                amountOfSheets++;
+                temp2 = index(from);
+                sheets[range] = sheetName(temp2);
             remove(temp2);
             return temp;
-        }
-        else if(index(from) != -1 && index(to) != -1 && !before && !from.equalsIgnoreCase(to)) {
-
-            for(int i = amountOfSheets - 1; i >= temp + 1; i-- ) {
-                sheets[i + 1] = sheets[i];
-            }
-                amountOfSheets++;
-                sheets[temp + 1] = from;
-                remove(temp2);
-                return temp + 1;
-            }
-             else{
-                 return -1;
+        } else {
+            return -1;
         }
     }
     public static String move(int from, int to, boolean before) {
         String temp = sheetName(to);
         String temp2 = sheetName(from);
-        if(sheetName(to) != null  && sheetName(from) != null && before && from != to ) {
-            for (int i = amountOfSheets - 1; i >= to; i--) {
-                sheets[i + 1] = sheets[i];
+        int temp3 =0, range = 0;
+        if(sheetName(to) != null  && sheetName(from) != null && from != to ) {
+            if (before) {
+                range = to;
+            } else {
+                range = to + 1;
             }
-            amountOfSheets++;
-            sheets[to] = temp2;
-            remove(from);
+                for (int i = amountOfSheets - 1; i >= range; i--) {
+                    sheets[i + 1] = sheets[i];
+                }
+                amountOfSheets++;
+                temp3 = index(temp2);
+                sheets[range] = temp2;
+            remove(temp3);
             return temp;
-        }
-        else if(sheetName(to) != null && sheetName(from) != null && !before && from != to) {
-            for (int i = amountOfSheets - 1; i >= to + 1; i-- ) {
-                sheets[i + 1] = sheets[i];
-            }
-            amountOfSheets++;
-            sheets[to + 1] = temp2;
-            remove(from);
-            return temp;
-        }
-        else{
+        } else {
             return null;
         }
     }
