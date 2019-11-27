@@ -25,6 +25,7 @@ public class Function {
         if(index(from) != -1  && index(to) != -1 && !from.equalsIgnoreCase(to) ) {
             if (before) {
                 range = temp;
+                temp--;
             } else {
                 range = temp +1;
             }
