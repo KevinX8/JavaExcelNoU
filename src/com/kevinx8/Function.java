@@ -64,15 +64,33 @@ public class Function {
         }
     }
     public static int moveToEnd(String from) {
-        return -1;
+       int temp = index(from);
+        if(temp != -1){
+           move(from, sheetName(amountOfSheets - 1), false);
+            return temp;
+        } else {
+            return -1;
+        }
+        }
 
-    }
+
     public static String moveToEnd(int from) {
-        return null;
+        String temp = sheetName(from);
+        if(sheetName(from) != null){
+            move(from, amountOfSheets - 1, false);
+            return temp;
+        } else {
+            return null;
+        }
 
     }
     public static int rename(String currentName, String newName) {
-        return -1;
+        if(index(currentName) != -1 && index(newName) == -1){
+            sheets[index(currentName)] = newName;
+            return index(newName);
+        }   else{
+            return -1;
+        }
 
     }
     public static String sheetName(int index){
