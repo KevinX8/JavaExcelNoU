@@ -1,8 +1,14 @@
 package com.kevinx8;
 
-public class Function {
+public class ExcelRemake {
     public String[] sheets = new String[256];
     public int lastAdded = 0, amountOfSheets = 0;
+    public void initialise() {
+        add();
+        add();
+        add();
+    }
+
 
     public boolean add() {
         if (amountOfSheets <= 256) {
