@@ -17,35 +17,34 @@ public class Driver {
         SpreadSheet1.Display(); //1st
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add());
         SpreadSheet1.Display(); //2nd
-        System.out.printf("Sheet1 removed from index %d\nSheet2 removed from index %d\nSheet3 removed from index %d\n"
-                , SpreadSheet1.remove("ShEEt1")
-                , SpreadSheet1.remove("sheet2")
-                , SpreadSheet1.remove("sheet3")
+        System.out.printf("Sheet1 removed from position %d\nSheet2 removed from position %d\nSheet3 removed from position %d\n"
+                , SpreadSheet1.remove("ShEEt1") +1
+                , SpreadSheet1.remove("sheet2") +1
+                , SpreadSheet1.remove("sheet3") +1
         );
-        System.out.println("First three sheets were removed");
         SpreadSheet1.Display(); //3rd
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add());
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add());
         SpreadSheet1.Display(); //4th
-        System.out.printf("Sheet at index %d renamed\n", SpreadSheet1.rename("sheet5", "ClassList"));
+        System.out.printf("Sheet at position %d renamed\n", SpreadSheet1.rename("sheet5", "ClassList")+1);
         SpreadSheet1.Display(); //5th
-        System.out.printf("Sheet4 removed from index %d\n Sheet6 removed from index %d\n"
-                , SpreadSheet1.remove("Sheet4")
-                , SpreadSheet1.remove("sheet6")
+        System.out.printf("Sheet4 removed from position %d\nSheet6 removed from position %d\n"
+                , SpreadSheet1.remove("Sheet4") +1
+                , SpreadSheet1.remove("sheet6") +1
         );
         SpreadSheet1.Display(); //6th
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add()); //7
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add()); //8
         SpreadSheet1.Display(); //7th
-        System.out.printf("Sheet at index %d renamed\n", SpreadSheet1.rename("sheet8", "TimeTable"));
+        System.out.printf("Sheet at position %d renamed\n", SpreadSheet1.rename("sheet8", "TimeTable")+1);
         SpreadSheet1.Display(); //8th
-        System.out.printf("Sheet7 removed from index %d\nClassList removed from index %d\n"
-                , SpreadSheet1.remove("ShEEt7")
-                , SpreadSheet1.remove("ClAsSlIsT")
+        System.out.printf("Sheet7 removed from position %d\nClassList removed from position %d\n"
+                , SpreadSheet1.remove("ShEEt7") +1
+                , SpreadSheet1.remove("ClAsSlIsT") +1
         );
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add()); //9
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add()); //10
-        System.out.printf("Sheet at index 1 moved to index %d, Sheet at index 2 moved to index %d\n", SpreadSheet1.move("Sheet9", "Timetable", true), SpreadSheet1.move("Sheet10", "Sheet9", true));
+        System.out.printf("Sheet at position 2 moved to position %d, Sheet at position 3 moved to position %d\n", SpreadSheet1.move("Sheet9", "Timetable", true)+1, SpreadSheet1.move("Sheet10", "Sheet9", true)+1);
         SpreadSheet1.Display(); //9th
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add());
         SpreadSheet1.Display(); //10th
@@ -139,4 +138,3 @@ public class Driver {
         SpreadSheet2.Display();
     }
 }
-
