@@ -107,7 +107,9 @@ public class Driver {
         System.out.printf("%d is ea an áit ina bhfuil %s\n", userInput + 1,SpreadSheet1.sheetName(userInput));
         System.out.printf("Buileog curtha i SpreadSheet2: %b\n", SpreadSheet2.add());
         System.out.printf("Buileog ag %d tugtha \n", SpreadSheet2.rename("Sheet4", "ThisNotInSpreadSheet1"));
+        System.out.println("Seo é Spreadsheet1: ");
         SpreadSheet1.Display();
+        System.out.println("Seo é Spreadsheet2: ");
         SpreadSheet2.Display();
     }
     public static void RoutineGaeilgeButInEnglish() {
@@ -127,7 +129,9 @@ public class Driver {
         System.out.printf("Sheet at %d is %s\n", userInput + 1,SpreadSheet1.sheetName(userInput));
         System.out.printf("Sheet added to Spreadsheet2: %b\n", SpreadSheet2.add());
         System.out.printf("Sheet at %d renamed \n", SpreadSheet2.rename("Sheet4", "ThisNotInSpreadSheet1"));
+        System.out.println("This is Spreadsheet1: ");
         SpreadSheet1.Display();
+        System.out.println("This is Spreadsheet2: ");
         SpreadSheet2.Display();
     }
     }
