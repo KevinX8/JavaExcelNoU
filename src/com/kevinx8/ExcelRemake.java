@@ -10,8 +10,6 @@ public class ExcelRemake {
         add();
         add();
     }
-
-
     public boolean add() {
         if (amountOfSheets <= 256) {
             while (index("Sheet" + (lastAdded + 1)) != -1) {
@@ -27,7 +25,7 @@ public class ExcelRemake {
     }
     public int move(String from, String to,boolean before) {
         int temp = index(to);
-        int temp2 = 0, range = 0;
+        int temp2, range;
         if(index(from) != -1  && index(to) != -1 && !from.equalsIgnoreCase(to) ) {
             if (before) {
                 range = temp;
@@ -48,7 +46,7 @@ public class ExcelRemake {
     }
     public String move(int from, int to, boolean before) {
         String temp2 = sheetName(from);
-        int temp3 =0, range = 0;
+        int temp3, range;
         if(sheetName(to) != null  && sheetName(from) != null && from != to ) {
             if (before) {
                 range = to;
@@ -68,16 +66,14 @@ public class ExcelRemake {
         }
     }
     public int moveToEnd(String from) {
-       int temp = index(from);
-        if(temp != -1){
-           move(from, sheetName(amountOfSheets - 1), false);
+        int temp = index(from);
+        if (temp != -1) {
+            move(from, sheetName(amountOfSheets - 1), false);
             return temp;
         } else {
             return -1;
         }
-        }
-
-
+    }
     public String moveToEnd(int from) {
         String temp = sheetName(from);
         if(sheetName(from) != null){
@@ -91,10 +87,9 @@ public class ExcelRemake {
         if(index(currentName) != -1 && index(newName) == -1){
             sheets[index(currentName)] = newName;
             return index(newName);
-        }   else{
+        } else {
             return -1;
         }
-
     }
     public String sheetName(int index){
         if(index >= 0 && index < sheets.length){
@@ -103,7 +98,6 @@ public class ExcelRemake {
             return null;
         }
     }
-
     public int index(String sheetName){
         int i;
         for (i = 0; i < amountOfSheets; i++) {
@@ -121,7 +115,6 @@ public class ExcelRemake {
         }
         System.out.println(output.substring(0,output.length() -2) + "]");
     }
-
     public String remove(int index){
         int i;
         String temp = sheetName(index);
@@ -132,7 +125,7 @@ public class ExcelRemake {
             sheets[amountOfSheets] = null;
             amountOfSheets--;
             return temp;
-        }else {
+        } else {
             return null;
         }
     }
@@ -146,7 +139,7 @@ public class ExcelRemake {
             sheets[amountOfSheets] = null;
             amountOfSheets--;
             return temp;
-        }else {
+        } else {
             return -1;
         }
     }

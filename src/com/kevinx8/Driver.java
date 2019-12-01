@@ -126,12 +126,13 @@ public class Driver {
         System.out.printf("Sheet added to Spreadsheet1: %b\n", SpreadSheet1.add());
         System.out.printf("%d is the amount of sheets in SpreadSheet1\n", SpreadSheet1.length());
         SpreadSheet1.Display();
-        System.out.printf("%d is the position of Sheet3.\n", SpreadSheet1.index("Sheet3") + 1);
-        int userInput = 5;
-        userInput--;
-        System.out.printf("Sheet at %d is %s\n", userInput + 1, SpreadSheet1.sheetName(userInput));
+        System.out.printf("%d is the position of Sheet3 in SpreadSheet1.\n", SpreadSheet1.index("Sheet3") + 1);
+        int userInput = 5; //user's input
+        userInput--; //converts user input to Java index offset
+        System.out.printf("Sheet at position %d is %s in SpreadSheet1\n", userInput + 1, SpreadSheet1.sheetName(userInput));
         System.out.printf("Sheet added to Spreadsheet2: %b\n", SpreadSheet2.add());
-        System.out.printf("Sheet at %d renamed \n", SpreadSheet2.rename("Sheet4", "ThisNotInSpreadSheet1"));
+        System.out.printf("Sheet at index %d renamed in SpreadSheet2\n", SpreadSheet2.rename("Sheet4", "ThisNotInSpreadSheet1"));
+        System.out.printf("Sheet %s moved to index 0 in Spreadsheet2\n", SpreadSheet2.move(3,0,true));
         System.out.println("This is Spreadsheet1: ");
         SpreadSheet1.Display();
         System.out.println("This is Spreadsheet2: ");
