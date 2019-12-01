@@ -41,7 +41,7 @@ public class ExcelRemake {
                 temp2 = index(from); //stored temporarily so that remove doesn't remove the new sheet below
                 sheets[range] = sheetName(temp2);
             remove(temp2);
-            return index(sheets[range]);
+            return range;
         } else {
             return -1;
         }
