@@ -1,5 +1,7 @@
 package com.kevinx8;
-
+// Paulis Gributs 19250568
+// Josh McGiff
+// Not Sean lol
 public class ExcelRemake {
     public String[] sheets = new String[256];
     public int lastAdded = 0, amountOfSheets = 0;
@@ -115,10 +117,11 @@ public class ExcelRemake {
     }
 
     public void Display(){
+        String output = "[";
         for (int i = 0; i < amountOfSheets; i++) {
-            System.out.print(sheets[i] + " ");
+            output += sheets[i] + ", ";
         }
-        System.out.println(); //remove this later
+        System.out.println(output.substring(0,output.length() -2) + "]");
     }
 
     public String remove(int index){

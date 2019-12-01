@@ -1,5 +1,7 @@
 package com.kevinx8;
-
+// Paulis Gributs 19250568
+// Josh McGiff
+// Not Sean lol
 public class Driver {
     public static void main(String[] args) {
         RoutineA();
@@ -15,7 +17,6 @@ public class Driver {
         SpreadSheet1.Display(); //1st
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add());
         SpreadSheet1.Display(); //2nd
-        //System.out.printf();
         System.out.printf("Sheet1 removed from index %d\nSheet2 removed from index %d\nSheet3 removed from index %d\n"
                 , SpreadSheet1.remove("ShEEt1")
                 , SpreadSheet1.remove("sheet2")
@@ -49,6 +50,7 @@ public class Driver {
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add());
         SpreadSheet1.Display(); //10th
     }
+
     public static void RoutineB() {
         ExcelRemake SpreadSheet1 = new ExcelRemake();
         SpreadSheet1.initialise();
@@ -104,7 +106,7 @@ public class Driver {
         System.out.printf("%d is ea an áit in a bhfuil Sheet3\n", SpreadSheet1.index("Sheet3") + 1);
         int userInput = 5;
         userInput--;
-        System.out.printf("%d is ea an áit ina bhfuil %s\n", userInput + 1,SpreadSheet1.sheetName(userInput));
+        System.out.printf("%d is ea an áit ina bhfuil %s\n", userInput + 1, SpreadSheet1.sheetName(userInput));
         System.out.printf("Buileog curtha i SpreadSheet2: %b\n", SpreadSheet2.add());
         System.out.printf("Buileog ag %d tugtha \n", SpreadSheet2.rename("Sheet4", "ThisNotInSpreadSheet1"));
         System.out.println("Seo é Spreadsheet1: ");
@@ -112,6 +114,7 @@ public class Driver {
         System.out.println("Seo é Spreadsheet2: ");
         SpreadSheet2.Display();
     }
+
     public static void RoutineGaeilgeButInEnglish() {
         ExcelRemake SpreadSheet1 = new ExcelRemake();
         SpreadSheet1.initialise();
@@ -126,7 +129,7 @@ public class Driver {
         System.out.printf("%d is the position of Sheet3.\n", SpreadSheet1.index("Sheet3") + 1);
         int userInput = 5;
         userInput--;
-        System.out.printf("Sheet at %d is %s\n", userInput + 1,SpreadSheet1.sheetName(userInput));
+        System.out.printf("Sheet at %d is %s\n", userInput + 1, SpreadSheet1.sheetName(userInput));
         System.out.printf("Sheet added to Spreadsheet2: %b\n", SpreadSheet2.add());
         System.out.printf("Sheet at %d renamed \n", SpreadSheet2.rename("Sheet4", "ThisNotInSpreadSheet1"));
         System.out.println("This is Spreadsheet1: ");
@@ -134,5 +137,5 @@ public class Driver {
         System.out.println("This is Spreadsheet2: ");
         SpreadSheet2.Display();
     }
-    }
+}
 
