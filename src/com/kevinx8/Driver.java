@@ -29,7 +29,7 @@ public class Driver {
         SpreadSheet1.Display(); //4th
         System.out.printf("Sheet at index %d renamed\n", SpreadSheet1.rename("sheet5", "ClassList"));
         SpreadSheet1.Display(); //5th
-        System.out.printf("Sheet4 removed from index %d\n Sheet6 removed from index%d\n"
+        System.out.printf("Sheet4 removed from index %d\n Sheet6 removed from index %d\n"
                 , SpreadSheet1.remove("Sheet4")
                 , SpreadSheet1.remove("sheet6")
         );
@@ -45,7 +45,7 @@ public class Driver {
         );
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add()); //9
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add()); //10
-        System.out.printf("Sheet at index %d moved to index 1, Sheet at index %d moved to index 0\n", SpreadSheet1.move("Sheet9", "Timetable", true), SpreadSheet1.move("Sheet10", "Sheet9", true));
+        System.out.printf("Sheet at index 1 moved to index %d, Sheet at index 2 moved to index %d\n", SpreadSheet1.move("Sheet9", "Timetable", true), SpreadSheet1.move("Sheet10", "Sheet9", true));
         SpreadSheet1.Display(); //9th
         System.out.printf("Sheet added: %b\n", SpreadSheet1.add());
         SpreadSheet1.Display(); //10th

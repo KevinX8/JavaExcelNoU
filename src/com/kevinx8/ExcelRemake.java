@@ -42,13 +42,12 @@ public class ExcelRemake {
                 temp2 = index(from); //stored temporarily so that remove doesn't remove the new sheet below
                 sheets[range] = sheetName(temp2);
             remove(temp2);
-            return temp;
+            return index(sheets[range]);
         } else {
             return -1;
         }
     }
     public String move(int from, int to, boolean before) {
-        String temp = sheetName(to);
         String temp2 = sheetName(from);
         int temp3 =0, range = 0;
         if(sheetName(to) != null  && sheetName(from) != null && from != to ) {
@@ -64,7 +63,7 @@ public class ExcelRemake {
                 temp3 = index(temp2); //same as in other move
                 sheets[range] = temp2;
             remove(temp3);
-            return temp;
+            return temp2;
         } else {
             return null;
         }
