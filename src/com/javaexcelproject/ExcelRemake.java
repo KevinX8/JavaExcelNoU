@@ -1,7 +1,7 @@
-package com.kevinx8;
+package com.javaexcelproject;
 // Paulis Gributs 19250568
-// Josh McGiff
-// Not Sean lol
+// Josh McGiff 19250363
+// Sean O'Neill 19240066
 public class ExcelRemake {
     public String[] sheets = new String[256];
     public int lastAdded = 0, amountOfSheets = 0;
@@ -107,7 +107,6 @@ public class ExcelRemake {
         }
         return -1;
     }
-
     public void Display(){
         String output = "[";
         for (int i = 0; i < amountOfSheets; i++) {
